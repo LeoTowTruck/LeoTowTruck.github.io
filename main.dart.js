@@ -109671,8 +109671,8 @@ A.ch(p)
 p=k.c
 p.toString
 A.b_p(p,0)},
-M(a2){var s,r,q,p,o,n,m,l=this,k=null,j=t.w,i=A.bq(a2,k,j).w.a.a>600,h=A.ks(k,A.aMU(!0,A.qD(l.y,B.Mn,k,!1,k,k,k,1,k,k,k,k,!0,k)),B.ab,!1,k,k,k,k,k,k,k,k,k,k,k,k,k,new A.al9(l),k,k,k,k,k,k),g=A.ks(k,A.aMU(!0,A.qD(l.z,B.Ms,k,!1,k,k,k,1,k,k,k,k,!0,k)),B.ab,!1,k,k,k,k,k,k,k,k,k,k,k,k,k,new A.ala(l,a2),k,k,k,k,k,k),f=A.bT(k,A.bk("\u4f4d\u7f6e: X= "+B.d.ap(l.f.a,10)+", Y= "+B.d.ap(l.f.b,10),k,k,k,k,A.ei(k,k,B.i,k,k,k,k,k,k,k,k,14,k,k,k,k,k,!0,k,k,k,k,k,k,k,k),k,k),B.l,k,k,B.Fl,k,k,k,B.Kx,k,k,1/0),e=!l.dx,d=l.f,c=l.r,b=!l.k4&&!l.w,a=A.cY(12),a0=t.Q,a1=A.a([new A.bI(0,B.N,A.aa(B.d.ai(25.5),0,0,0),B.lK,10)],a0)
-b=A.YB(A.e6(8,A.bT(k,A.Q3(A.cY(12),A.akh(new A.alb(l),$.aKN.length,k,k,B.an,!1),B.ba),B.l,k,k,new A.cv(B.i,k,k,a,a1,k,B.Y),k,k,k,k,k,k,k),k,k,12,12,60,k),b)
+M(a2){var s,r,q,p,o,n,m,l=this,k=null,j=t.w,i=A.bq(a2,k,j).w.a.a>600,h=A.ks(k,A.aMU(!0,A.qD(l.y,B.Mn,k,!1,k,k,k,1,k,k,k,k,!0,k)),B.ab,!1,k,k,k,k,k,k,k,k,k,k,k,k,k,new A.al9(l),k,k,k,k,k,k),g=A.ks(k,A.aMU(!0,A.qD(l.z,B.Ms,k,!1,k,k,k,1,k,k,k,k,!0,k)),B.ab,!1,k,k,k,k,k,k,k,k,k,k,k,k,k,new A.ala(l,a2),k,k,k,k,k,k),f=A.bT(k,A.bk("\u4f4d\u7f6e: X= "+B.d.ap(l.f.a,10)+", Y= "+B.d.ap(l.f.b,10),k,k,k,k,A.ei(k,k,B.i,k,k,k,k,k,k,k,k,14,k,k,k,k,k,!0,k,k,k,k,k,k,k,k),k,k),B.l,k,k,B.Fl,k,k,k,B.Kx,k,k,1/0),e=!l.dx,d=l.f,c=l.r,b=l.w,a=A.cY(12),a0=t.Q,a1=A.a([new A.bI(0,B.N,A.aa(B.d.ai(25.5),0,0,0),B.lK,10)],a0)
+b=A.YB(A.e6(8,A.bT(k,A.Q3(A.cY(12),A.akh(new A.alb(l),$.aKN.length,k,k,B.an,!1),B.ba),B.l,k,k,new A.cv(B.i,k,k,a,a1,k,B.Y),k,k,k,k,k,k,k),k,k,12,12,60,k),!b)
 a1=l.tn()
 a=l.tn()
 s=A.cY(12)
@@ -109934,7 +109934,9 @@ A.al8.prototype={
 $0(){var s,r,q,p,o=this.a,n=this.b,m=n.c
 o.Q.scR(0,m)
 s=n.b
-if((s==null?null:s.a)!=null){o.ch=!0
+if((s==null?null:s.a)!=null){o.w=!0
+o.dx=!1
+o.ch=!0
 r=o.e
 r===$&&A.b()
 s=s.a
