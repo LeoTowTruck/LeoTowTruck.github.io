@@ -5,7 +5,7 @@
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Road Savior is a professional task-matching platform that uses location services to help drivers quickly receive nearby orders for moving, tow truck, transportation, and crane tasks, enabling efficient matching between clients and drivers for a seamless task experience.",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
