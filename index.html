@@ -37,17 +37,13 @@
   <!-- Google Map API -->
   <script src="https://maps.googleapis.com/maps/api/js?v=weekly&amp;key=AIzaSyBjSGiVQD0Hl5nYWlpgnuQggcaixwv4DFw"></script>
 
-  <!-- reCAPTCHA for 簡訊驗證 -->
+  <!-- reCAPTCHA -->
   <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcyGG8rAAAAAEmYIYb8Yb5GpWZhcKAIaYRa5T2O"></script>
-
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth.js"></script>
-
 
   <style>
     /* 如果需要調整Google reCAPTCHA提示框位置 */
     .grecaptcha-badge {
-      /* position: fixed !important;    /* 固定定位    */
+      position: fixed !important;    /* 固定定位    */
       /*bottom: -1000px !important;    /* 調整底部間距 */
       /*right: -1000px !important;     /* 調整右邊間距 */
     }
@@ -122,10 +118,6 @@
 </head>
 <body>
 
-  <!-- 為可見 reCAPTCHA 小部件添加容器（可選 -->
-  <div id="recaptcha-container"></div>
-
-
    <picture id="splash">
        <source srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x, splash/img/light-4x.png 4x" media="(prefers-color-scheme: light)">
        <source srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x" media="(prefers-color-scheme: dark)">
@@ -135,5 +127,7 @@
    <script src="flutter_bootstrap.js" async=""></script>
 
 
+    <!-- 為可見 reCAPTCHA 小部件添加容器（可選 -->
+    <div id="recaptcha-container"></div>
 
  </body></html>
