@@ -26,12 +26,14 @@
   <script src="https://maps.googleapis.com/maps/api/js?v=weekly&amp;key=AIzaSyBjSGiVQD0Hl5nYWlpgnuQggcaixwv4DFw" async defer></script>
 
 
-  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.14.0/firebase-app-check-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-app-check-compat.js"></script>
+
 
   <!-- reCAPTCHA enterprise -->
   <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcyGG8rAAAAAEmYIYb8Yb5GpWZhcKAIaYRa5T2O" async defer></script>
+
 
   <!-- Phone Auth reCAPTCHA v2
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -42,11 +44,18 @@
       .grecaptcha-badge {
         position: fixed !important;     /* 固定定位 */
         bottom: 56px !important;        /* 調整底部間距 */
-        /* right: -1000px !important;   調整右邊間距 */
-        z-index: 1000 !important;
+        z-index: 9997 !important;
       }
       #recaptcha-container {
         position: fixed;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 9998;
+      }
+      .g-recaptcha {
+        position: fixed !important;
+        left: 50%;
+        transform: translateX(-50%);
         z-index: 9999;
       }
     </style>
