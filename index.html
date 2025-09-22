@@ -26,10 +26,13 @@
   <script src="https://maps.googleapis.com/maps/api/js?v=weekly&amp;key=AIzaSyBjSGiVQD0Hl5nYWlpgnuQggcaixwv4DFw" async defer></script>
 
 
-  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+  <script type="module">
+    // 導入 Firebase SDK
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+    import { getAuth } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-analytics.js";
 
-  <script>
+    // Firebase 配置
     const firebaseConfig = {
       apiKey: "AIzaSyBN2OviVJ2nJDTCJD4wxzQ1b8gyVkM2RCc",
       authDomain: "roadsavior-da427.firebaseapp.com",
@@ -40,16 +43,16 @@
       appId: "1:299219026573:web:6cf8e76346856f4c4198c4",
       measurementId: "G-10FRF5CN8W"
     };
+
+    // 初始化 Firebase
     const app = initializeApp(firebaseConfig);
+
+    // 初始化 Analytics
     const analytics = getAnalytics(app);
+
+    // 初始化 Auth
+    const auth = getAuth(app);
   </script>
-
-
-  <!--
-  <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/12.3.0/firebase-app-check.js"></script>
-  -->
 
   <!-- reCAPTCHA enterprise -->
   <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcyGG8rAAAAAEmYIYb8Yb5GpWZhcKAIaYRa5T2O" async defer></script>
