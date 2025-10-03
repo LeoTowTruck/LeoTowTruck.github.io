@@ -40,8 +40,10 @@
 
   <!-- reCAPTCHA enterprise -->
   <script src="https://www.google.com/recaptcha/enterprise.js?render=6LcyGG8rAAAAAEmYIYb8Yb5GpWZhcKAIaYRa5T2O" async defer></script>
+  
 
   <style>
+
     /* 如果需要調整Google reCAPTCHA提示框位置 */
     .grecaptcha-badge {
       visibility: hidden; 
@@ -52,18 +54,50 @@
       */
     }
 
-  #recaptcha-container {
-    position: fixed !important;
-    z-index: 9998 !important;
-  }
-
-  @media (min-width: 768px) {
     #recaptcha-container {
-      top: 20% !important;
-      left: 50% !important;
-      transform: translateX(-50%) !important;
+      position: fixed !important;
+      z-index: 9998 !important;
     }
-  }
+
+    @media (min-width: 768px) {
+      #recaptcha-container {
+        top: 20% !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+      }
+    }
+
+
+    /* 頂部進度條容器 */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 6px; /* 增加高度，視覺更顯眼 */
+      background: #e0e7ff; /* 淺藍灰背景，與品牌色調和 */
+      z-index: 9999;
+      overflow: hidden;
+    }
+
+    /* 進度條動畫 */
+    .progress-bar::after {
+      content: '';
+      position: absolute;
+      width: 30%; /* 拉長進度條，流動感更強 */
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #8b5cf6); /* 藍到紫的漸變 */
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.8); /* 模糊光暈效果 */
+      animation: slide 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite; /* 平滑曲線 */
+    }
+
+    /* 雙向滑動動畫 */
+    @keyframes slide {
+      0% { left: -30%; }
+      50% { left: 100%; }
+      100% { left: -30%; }
+    }
+
   </style>
 
   <style id="splash-screen-style">
@@ -138,18 +172,52 @@
 
     <!-- reCAPTCHA 容器 -->
     <div id="recaptcha-container"></div>
-    
+      
+    <!-- 頂部進度條 -->
+    <div class="progress-bar"></div>
 
+    <!-- Logo -->
     <picture id="splash">
         <source srcset="splash/img/light-1x.png 1x, splash/img/light-2x.png 2x, splash/img/light-3x.png 3x, splash/img/light-4x.png 4x" media="(prefers-color-scheme: light)">
         <source srcset="splash/img/dark-1x.png 1x, splash/img/dark-2x.png 2x, splash/img/dark-3x.png 3x, splash/img/dark-4x.png 4x" media="(prefers-color-scheme: dark)">
         <img class="center" aria-hidden="true" src="splash/img/light-1x.png" alt="">
     </picture>
 
+    <!-- Flutter web -->
     <script src="flutter_bootstrap.js" async=""></script>
 
+
     <script>
-      console.log('🔥🔥🔥 Updata time: 2025/10/01 - 16:20 🔥🔥🔥');
+      // 監聽 Flutter Web 渲染完成的第一幀事件，表示 Flutter 應用程式已準備好顯示
+      window.addEventListener('flutter-first-frame', () => {
+        // 獲取 ID 為 'splash' 的元素（通常是 splash screen 的容器）
+        const splash = document.getElementById('splash');
+        // 獲取類名為 'progress-bar' 的元素（進度條容器）
+        const progressBar = document.querySelector('.progress-bar');
+        // 檢查 splash 元素是否存在
+        if (splash) {
+          // 為 splash 元素添加 CSS 過渡效果，設置透明度變化為 0.5 秒，平滑淡出
+          splash.style.transition = 'opacity 0.5s ease-out';
+          // 將 splash 元素的透明度設為 0，開始淡出
+          splash.style.opacity = '0';
+          // 延遲 500 毫秒後移除 splash 元素，與淡出動畫時間一致
+          setTimeout(() => splash.remove(), 500);
+        }
+        // 檢查進度條元素是否存在
+        if (progressBar) {
+          // 為進度條元素添加 CSS 過渡效果，設置透明度變化為 0.5 秒，平滑淡出
+          progressBar.style.transition = 'opacity 0.5s ease-out';
+          // 將進度條元素的透明度設為 0，開始淡出
+          progressBar.style.opacity = '0';
+          // 延遲 500 毫秒後移除進度條元素，與淡出動畫時間一致
+          setTimeout(() => progressBar.remove(), 500);
+        }
+        // 將 <body> 的背景設為透明，確保 Flutter 應用程式的畫面完全顯示
+        document.body.style.background = 'transparent';
+      });
+
+      localStorage.setItem('debug', 'firebase:*');
+      console.log('🔥🔥🔥 Updata time: 2025/10/03 - 13:30 🔥🔥🔥');
     </script>
 
 </body></html>
