@@ -44,8 +44,8 @@ function compressImage(imageData) {
         // 使用 ctx.drawImage 方法將 imageBitmap 畫到 canvas 上
         ctx.drawImage(imageBitmap, 0, 0);
 
-        // 使用 canvas 的 convertToBlob 方法將圖像轉換為 Blob 格式，並設定為 JPEG 格式，質量為 0.8
-        canvas.convertToBlob({ type: 'image/jpeg', quality: 0.8 })
+        // 使用 canvas 的 convertToBlob 方法將圖像轉換為 Blob 格式，並設定為 JPEG 格式，質量為 0.75
+        canvas.convertToBlob({ type: 'image/jpeg', quality: 0.75 })
           .then((compressedBlob) => {
             // 創建一個 FileReader，用於讀取 Blob 並將其轉換為二進制數據（ArrayBuffer）
             const reader = new FileReader();
